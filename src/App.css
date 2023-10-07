@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color:rgb(221, 75, 104);
 }
 
 .App-logo {
@@ -21,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(118, 9, 9);
 }
 
 .App-link {
@@ -34,5 +35,32 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+h1 {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.third {
+  border-color: rgb(91, 91, 203);
+  color: #5acdfb;
+  box-shadow: 0 0 40px 40px rgb(58, 58, 116) inset, 0 0 0 0 blue;
+  transition : all 150ms ease-in-out;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 32px;
+  
+  &:hover {
+    box-shadow: 0 0 10px 0 rgb(16, 150, 150) inset, 0 0 10px 4px blue;
   }
 }

@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 import './App.css';
+import Axios from "axios";
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [catFact, setCatFact] = useState("");
+
+  const newFact = () => {
+    Axios.get("https:/catfact.ninja/fact").then((res) => {
+      console.log(res.data);
+      setCatFact (res.data.fact);
+    })
+  }
+
+  useEffect(() => {
+    newFact();
+  } , []);
+  
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <button onClick={newFact} className='third'>Generate New</button>
+    <h1  >{catFact}</h1>
     </div>
   );
 }
